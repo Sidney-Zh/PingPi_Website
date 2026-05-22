@@ -3,7 +3,7 @@ const SCREENSHOT_WIDTH = 828;
 const SCREENSHOT_HEIGHT = 1792;
 const RESPONSIVE_IMAGE_WIDTHS = [420, 640, 828];
 const HERO_IMAGE_SIZES = "(max-width: 560px) 68vw, (max-width: 900px) 36vw, 390px";
-const GALLERY_IMAGE_SIZES = "(max-width: 560px) 62vw, (max-width: 1200px) 28vw, 406px";
+const GALLERY_IMAGE_SIZES = "(max-width: 560px) 70vw, (max-width: 1200px) 28vw, 406px";
 
 const LANGUAGE_OPTIONS = [
   ["en", "English"],
@@ -408,7 +408,8 @@ function setupGalleryDots(gallery, labels) {
     dot.title = label;
     dot.addEventListener("click", () => {
       const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
-      gallery.children[index]?.scrollIntoView({ behavior, block: "nearest", inline: "start" });
+      const inline = window.matchMedia("(max-width: 560px)").matches ? "center" : "start";
+      gallery.children[index]?.scrollIntoView({ behavior, block: "nearest", inline });
     });
     dots.appendChild(dot);
   });
