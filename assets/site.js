@@ -69,6 +69,8 @@ const COPY = {
     socialTitle: "Contact and social",
     contact: "Support: support@pingpi.top",
     copyright: "© 2026 PingPi",
+    termsLink: "Terms of Use",
+    privacyLink: "Privacy Policy",
     policies: ["Terms", "Privacy", "Membership", "Auto-Renewal"],
     screenshots: ["Start", "AI Coach", "Motion data", "Match Review", "Match data", "Auto Cut"],
     features: [
@@ -100,6 +102,8 @@ const COPY = {
     socialTitle: "联系与社交平台",
     contact: "支持邮箱：support@pingpi.top",
     copyright: "© 2026 PingPi",
+    termsLink: "用户协议",
+    privacyLink: "隐私政策",
     policies: ["用户协议", "隐私政策", "会员服务", "自动续费"],
     screenshots: ["首页", "AI教练", "动作数据", "比赛复盘", "比赛数据", "自动剪辑"],
     features: [
@@ -131,6 +135,8 @@ const COPY = {
     socialTitle: "聯絡與社群平台",
     contact: "支援信箱：support@pingpi.top",
     copyright: "© 2026 PingPi",
+    termsLink: "使用者協議",
+    privacyLink: "隱私政策",
     policies: ["使用者協議", "隱私政策", "會員服務", "自動續費"],
     screenshots: ["首頁", "AI 教練", "動作數據", "比賽復盤", "比賽數據", "自動剪輯"],
     features: [
@@ -162,6 +168,8 @@ const COPY = {
     socialTitle: "Kontakt und Social Media",
     contact: "Support: support@pingpi.top",
     copyright: "© 2026 PingPi",
+    termsLink: "Nutzungsbedingungen",
+    privacyLink: "Datenschutz",
     policies: ["Nutzungsbedingungen", "Datenschutz", "Mitgliedschaft", "Auto-Verlängerung"],
     screenshots: ["Start", "AI-Coach", "Bewegungsdaten", "Matchanalyse", "Matchdaten", "Auto-Schnitt"],
     features: [
@@ -193,6 +201,8 @@ const COPY = {
     socialTitle: "Contact et réseaux sociaux",
     contact: "Support : support@pingpi.top",
     copyright: "© 2026 PingPi",
+    termsLink: "Conditions d’utilisation",
+    privacyLink: "Politique de confidentialité",
     policies: ["Conditions", "Confidentialité", "Abonnement", "Renouvellement"],
     screenshots: ["Accueil", "Coach IA", "Données gestuelles", "Analyse de match", "Données de match", "Montage auto"],
     features: [
@@ -224,6 +234,8 @@ const COPY = {
     socialTitle: "お問い合わせ・SNS",
     contact: "サポート：support@pingpi.top",
     copyright: "© 2026 PingPi",
+    termsLink: "利用規約",
+    privacyLink: "プライバシーポリシー",
     policies: ["利用規約", "プライバシー", "メンバーシップ", "自動更新"],
     screenshots: ["ホーム", "AIコーチ", "動作データ", "試合レビュー", "試合データ", "自動編集"],
     features: [
@@ -255,6 +267,8 @@ const COPY = {
     socialTitle: "문의 및 소셜",
     contact: "지원: support@pingpi.top",
     copyright: "© 2026 PingPi",
+    termsLink: "이용약관",
+    privacyLink: "개인정보처리방침",
     policies: ["이용약관", "개인정보", "멤버십", "자동 갱신"],
     screenshots: ["홈", "AI 코치", "동작 데이터", "경기 리뷰", "경기 데이터", "자동 편집"],
     features: [
@@ -493,6 +507,8 @@ function render(locale) {
   setText("[data-social-title]", copy.socialTitle);
   setText("[data-contact]", copy.contact);
   setText("[data-copyright]", copy.copyright);
+  setText("[data-terms-link]", copy.termsLink);
+  setText("[data-privacy-link]", copy.privacyLink);
 
   const heroImages = document.querySelectorAll("[data-hero-image]");
   if (heroImages[0]) setResponsiveScreenshot(heroImages[0], locale, 0, copy.screenshots[0], "high", HERO_IMAGE_SIZES);

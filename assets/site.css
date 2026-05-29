@@ -528,6 +528,17 @@ select {
   font-weight: 700;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-links a {
+  line-height: 1.4;
+}
+
 .reveal {
   animation: rise 700ms ease both;
 }
