@@ -8,6 +8,12 @@
 /assets/site.js
   Cache-Control: public, max-age=3600, must-revalidate
 
+/assets/site.20260530-2332.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/site.20260530-2332.js
+  Cache-Control: public, max-age=31536000, immutable
+
 /assets/icon-128.png
   Cache-Control: public, max-age=31536000, immutable
 
