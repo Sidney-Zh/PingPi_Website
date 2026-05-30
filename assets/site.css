@@ -178,34 +178,13 @@ select {
   justify-content: center;
   width: fit-content;
   line-height: 0;
-  cursor: default;
+  cursor: pointer;
 }
 
 .app-store-badge {
   display: block;
   width: clamp(168px, 16vw, 202px);
   height: auto;
-}
-
-.availability-note {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #1f5fd6;
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-.availability-note::before {
-  content: "";
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 5px rgba(24, 184, 143, 0.14);
 }
 
 .hero-visual {

@@ -45,6 +45,8 @@ const APP_STORE_BADGES = {
   ko: "https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/ko-kr?size=250x83",
 };
 
+const APP_STORE_URL = "https://apps.apple.com/us/app/pingpi-ai-table-tennis-coach/id6768219425";
+
 const COPY = {
   en: {
     pageTitle: "PingPi - AI table tennis assistant",
@@ -54,7 +56,6 @@ const COPY = {
     heroTitleB: "Improve faster.",
     heroLead: "PingPi turns one phone video into AI Coach feedback, Match Review data, and clean Auto Cut clips. Built for players who want useful answers after every session.",
     appStore: "Download on the App Store",
-    comingSoon: "Coming soon",
     statTitle: "One phone is enough",
     statText: "Record, review, export, and keep your table tennis progress in one place.",
     featuresKicker: "Three tools, one workflow",
@@ -87,7 +88,6 @@ const COPY = {
     heroTitleB: "更快进步。",
     heroLead: "PingPi 用一部手机完成 AI教练、比赛复盘和自动剪辑。训练后、比赛后，把视频交给它，留下真正有用的结果。",
     appStore: "在 App Store 下载",
-    comingSoon: "即将上线",
     statTitle: "一部手机就够",
     statText: "录制、分析、导出、回看，把乒乓球训练进度放在同一个地方。",
     featuresKicker: "三个功能，一个流程",
@@ -120,7 +120,6 @@ const COPY = {
     heroTitleB: "更快進步。",
     heroLead: "PingPi 用一部手機完成 AI 教練、比賽復盤和自動剪輯。訓練後、比賽後，把影片交給它，留下真正有用的結果。",
     appStore: "在 App Store 下載",
-    comingSoon: "即將上線",
     statTitle: "一部手機就夠",
     statText: "錄製、分析、匯出、回看，把桌球訓練進度放在同一個地方。",
     featuresKicker: "三個功能，一個流程",
@@ -153,7 +152,6 @@ const COPY = {
     heroTitleB: "Gezielter trainieren.",
     heroLead: "PingPi macht aus einem Handyvideo AI-Coach-Feedback, Matchanalyse und Auto-Schnitt-Clips. Für Spielerinnen und Spieler, die nach dem Training konkrete Hinweise wollen.",
     appStore: "Im App Store laden",
-    comingSoon: "Bald verfügbar",
     statTitle: "Ein Smartphone reicht",
     statText: "Aufnehmen, analysieren, exportieren und deine Fortschritte an einem Ort verfolgen.",
     featuresKicker: "Drei Werkzeuge, ein Ablauf",
@@ -186,7 +184,6 @@ const COPY = {
     heroTitleB: "Progressez plus vite.",
     heroLead: "PingPi transforme une vidéo filmée au téléphone en retour Coach IA, en Analyse de match et en clips de Montage auto. Utile après l’entraînement comme après la compétition.",
     appStore: "Télécharger sur l’App Store",
-    comingSoon: "Bientôt disponible",
     statTitle: "Un téléphone suffit",
     statText: "Filmez, analysez, exportez et suivez vos progrès au même endroit.",
     featuresKicker: "Trois outils, un seul flux",
@@ -219,7 +216,6 @@ const COPY = {
     heroTitleB: "練習を前に進める。",
     heroLead: "PingPi はスマートフォンの動画から、AIコーチのフィードバック、試合レビュー、自動編集クリップを作ります。練習後にも試合後にも使える卓球アプリです。",
     appStore: "App Storeでダウンロード",
-    comingSoon: "まもなく公開",
     statTitle: "スマートフォン1台で完結",
     statText: "撮影、分析、書き出し、振り返りまで、卓球の記録をひとつの場所にまとめます。",
     featuresKicker: "3つの機能、1つの流れ",
@@ -252,7 +248,6 @@ const COPY = {
     heroTitleB: "더 빠르게 발전하세요.",
     heroLead: "PingPi는 휴대폰 영상 하나로 AI 코치 피드백, 경기 리뷰, 자동 편집 클립을 만들어 줍니다. 훈련 후에도, 경기 후에도 바로 확인할 수 있습니다.",
     appStore: "App Store에서 다운로드",
-    comingSoon: "출시 예정",
     statTitle: "휴대폰 하나면 충분합니다",
     statText: "촬영, 분석, 내보내기, 다시 보기까지 탁구 기록을 한곳에서 관리합니다.",
     featuresKicker: "세 가지 기능, 하나의 흐름",
@@ -474,11 +469,11 @@ function setupGalleryHint(gallery) {
   observer.observe(gallery);
 }
 
-function setupDisabledStoreButton() {
+function setupAppStoreLinks() {
   document.querySelectorAll("[data-app-store-button]").forEach((button) => {
-    button.addEventListener("click", (event) => {
-      event.preventDefault();
-    });
+    button.href = APP_STORE_URL;
+    button.target = "_blank";
+    button.rel = "noopener noreferrer";
   });
 }
 
@@ -492,7 +487,6 @@ function render(locale) {
   setText("[data-hero-title-a]", copy.heroTitleA);
   setText("[data-hero-title-b]", copy.heroTitleB);
   setText("[data-hero-lead]", copy.heroLead);
-  setText("[data-coming-soon]", copy.comingSoon);
   setText("[data-stat-title]", copy.statTitle);
   setText("[data-stat-text]", copy.statText);
   setText("[data-features-kicker]", copy.featuresKicker);
@@ -534,6 +528,6 @@ function render(locale) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const locale = detectLocale();
-  setupDisabledStoreButton();
+  setupAppStoreLinks();
   render(locale);
 });
